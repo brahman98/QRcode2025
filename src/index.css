@@ -3,3 +3,6 @@
 @custom-variant dark (&:where(.dark, .dark *));
 
 
+details summary::-webkit-details-marker {
+    display:none;
+  }
