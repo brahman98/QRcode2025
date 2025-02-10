@@ -19,39 +19,51 @@ const QRCodeGen = observer(() => {
 
       {/* Кнопка "Настройки" */}
       <details className="mb-4 w-full max-w-xs">
-        <summary className="cursor-pointer border p-2 text-center bg-gray-200 rounded-lg dark:bg-[#2f2f2f]">
+        <summary className="cursor-pointer border p-2 text-center bg-gray-200 rounded-lg dark:bg-[#2f2f2f] list-none">
           ⚙️ Настройки
         </summary>
         <div className="mt-2 p-2 border rounded-lg">
           <label className="block mb-2">
             Размер (px):
-            <input
-              type="number"
-              value={qrCodeStore.size}
-              min={100}
-              max={1024}
-              className="border p-1 ml-2 w-20 focus:outline-0"
-              onChange={(e) => qrCodeStore.setSize(Number(e.target.value))}
-            />
+            <div className="flex gap-2 mt-1">
+              {qrCodeStore.sizes.map((size) => (
+                <label
+                  key={size}
+                  className="flex items-center cursor-pointer text-xs"
+                >
+                  <input
+                    type="radio"
+                    name="size"
+                    value={size}
+                    checked={qrCodeStore.size === size}
+                    onChange={() => qrCodeStore.setSize(size)}
+                    className="mr-2"
+                  />
+                  {size}x{size}
+                </label>
+              ))}
+            </div>
           </label>
-          <label className="block mb-2">
-            Цвет:
-            <input
-              type="color"
-              value={qrCodeStore.fgColor}
-              className="ml-2"
-              onChange={(e) => qrCodeStore.setFgColor(e.target.value)}
-            />
-          </label>
-          <label className="block">
-            Фон:
-            <input
-              type="color"
-              value={qrCodeStore.bgColor}
-              className="ml-2"
-              onChange={(e) => qrCodeStore.setBgColor(e.target.value)}
-            />
-          </label>
+          <div className="flex justify-around">
+            <label className="block mb-2">
+              Цвет:
+              <input
+                type="color"
+                value={qrCodeStore.fgColor}
+                className="ml-2"
+                onChange={(e) => qrCodeStore.setFgColor(e.target.value)}
+              />
+            </label>
+            <label className="block">
+              Фон:
+              <input
+                type="color"
+                value={qrCodeStore.bgColor}
+                className="ml-2"
+                onChange={(e) => qrCodeStore.setBgColor(e.target.value)}
+              />
+            </label>
+          </div>
         </div>
       </details>
 
@@ -64,7 +76,6 @@ const QRCodeGen = observer(() => {
             fgColor={qrCodeStore.fgColor}
             bgColor={qrCodeStore.bgColor}
             level="H"
-            ref={qrCodeStore.canvasRef}
           />
         ) : (
           <img
@@ -79,7 +90,7 @@ const QRCodeGen = observer(() => {
       <div style={{ display: "none" }}>
         <QRCodeCanvas
           value={qrCodeStore.text}
-          size={qrCodeStore.size}
+          size={qrCodeStore.size / 3} // деление на 3 для ровных значений, иначе умножит на 3 :/
           fgColor={qrCodeStore.fgColor}
           bgColor={qrCodeStore.bgColor}
           level="H"

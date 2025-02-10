@@ -5,7 +5,7 @@ import tailwindcss from '@tailwindcss/vite'
 
 // https://vite.dev/config/
 export default defineConfig({
-  base: './', // Указываем относительный путь!
+  base: '/QRcode2025/', // Указываем относительный путь!
   plugins: [
     tailwindcss(),
     react()

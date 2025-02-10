@@ -3,7 +3,8 @@ import { createRef } from "react";
 
 class QRCodeStore {
   text = "";
-  size = 256;
+  size = 1000;
+  sizes: number[] = [500, 1000, 2000]; // Доступные размеры
   fgColor = "#000000";
   bgColor = "#ffffff";
   canvasRef = createRef<HTMLCanvasElement>();
