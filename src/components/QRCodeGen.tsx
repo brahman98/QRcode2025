@@ -79,7 +79,7 @@ const QRCodeGen = observer(() => {
           />
         ) : (
           <img
-            src="qrcode.JPG" // Укажи путь к картинке-заглушке
+            src="qrcode.png"
             alt="QR-код будет здесь"
             className="w-full h-full object-cover"
           />
@@ -90,7 +90,7 @@ const QRCodeGen = observer(() => {
       <div style={{ display: "none" }}>
         <QRCodeCanvas
           value={qrCodeStore.text}
-          size={qrCodeStore.size / 3} // деление на 3 для ровных значений, иначе умножит на 3 :/
+          size={qrCodeStore.size / 2} // деление на 3 для ровных значений, иначе умножит на 3 :/
           fgColor={qrCodeStore.fgColor}
           bgColor={qrCodeStore.bgColor}
           level="H"
@@ -108,14 +108,14 @@ const QRCodeGen = observer(() => {
 
       <div className="flex">
         <button
-          className="border p-2 mx-2 rounded-lg"
+          className="border p-2 mx-2 rounded-lg cursor-pointer"
           onClick={() => qrCodeStore.downloadQRCode("png")}
           disabled={!hasText}
         >
           Скачать PNG
         </button>
         <button
-          className="border p-2 mx-2 rounded-lg"
+          className="border p-2 mx-2 rounded-lg cursor-pointer"
           onClick={() => qrCodeStore.downloadQRCode("svg")}
           disabled={!hasText}
         >
