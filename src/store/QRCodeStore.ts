@@ -6,7 +6,7 @@ class QRCodeStore {
   size = 1000;
   sizes: number[] = [500, 1000, 2000]; // Доступные размеры
   fgColor = "#000000";
-  bgColor = "#323232";
+  bgColor = "#ffffff";
   canvasRef = createRef<HTMLCanvasElement>();
   svgRef = createRef<SVGSVGElement>();
 

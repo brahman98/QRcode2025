@@ -1,7 +1,8 @@
 // import { useState } from 'react'
 import QRCodeGen from "./components/QRCodeGen";
 import Header from "./components/Header";
-import './index.css';
+import About from "./components/About";
+import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
 
 function App() {
@@ -10,6 +11,8 @@ function App() {
     <div>
       <Header />
       <QRCodeGen />
+      <About />
+      <FAQ />
       <Footer />
     </div>
   );
