@@ -4,7 +4,7 @@ function Header() {
   const { isDark, toggleTheme } = useThemeStore(); // Используем кастомный хук
 
   return (
-    <header className="mx-auto flex justify-between h-16 max-w-screen-xl items-center gap-8 px-4 sm:px-6 lg:px-8 mb-[5vh]">
+    <header className="w-full mx-auto flex justify-between h-16 items-center gap-8 px-4 sm:px-6 lg:px-8 mb-[5vh]">
       <a href="/index.html" className="flex items-center no-underline">
         <img src="qrcode.png" alt="QR-Code Logo" className="w-10 mr-2.5" />
         <h1 className="text-xl font-semibold m-0">QRcode2025.ru</h1>

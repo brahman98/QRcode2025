@@ -2,7 +2,7 @@
 
 function Footer() {
   return (
-    <footer className="max-w-screen-xl gap-8 px-4 sm:px-6 lg:px-8 text-center text-base p-4">
+    <footer className="w-full gap-8 px-4 sm:px-6 lg:px-8 text-center text-base p-4">
       <div className="flex items-center">
         <img src="qrcode.png" alt="QR-Code Logo" className="w-10 mr-2.5" />
         <h1 className="text-xl font-semibold">QRcode2025.ru</h1>

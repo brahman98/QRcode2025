@@ -7,7 +7,7 @@ const QRCodeGen = observer(() => {
   const hasText = Boolean(qrCodeStore.text); // Проверяем, есть ли введенный текст
 
   return (
-    <div className="p-4 flex flex-col items-center mb-12">
+    <div className="w-full p-4 flex flex-col items-center mb-12">
       <h2 className="text-[56px] font-bold -tracking-wider leading-[58px] mb-5 text-center">
         Твой QR&#8209;код
         <br />

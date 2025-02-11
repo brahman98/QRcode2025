@@ -1,7 +1,9 @@
 export default function About() {
   return (
     <>
-    <h1 className="text-xl font-semibold m-0 max-w-screen-xl gap-8 px-4 sm:px-6 lg:px-8">О проекте</h1>
+      <h1 className="w-full text-xl font-semibold m-0 gap-8 px-4 sm:px-6 lg:px-8">
+        О проекте
+      </h1>
       <p className="max-w-screen-xl gap-8 px-4 sm:px-6 lg:px-8 text-justify text-base p-4">
         QR-коды стали неотъемлемой частью нашей жизни. Мы встречаем их повсюду —
         на визитках, в рекламных материалах, на сайтах, упаковке товаров и даже

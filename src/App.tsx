@@ -6,16 +6,15 @@ import FAQ from "./components/FAQ";
 import Footer from "./components/Footer";
 
 function App() {
-
   return (
-    <div>
+    <>
       <Header />
       <QRCodeGen />
       <About />
       <FAQ />
       <Footer />
-    </div>
+    </>
   );
 }
 
-export default App
+export default App;
