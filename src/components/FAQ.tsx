@@ -1,7 +1,7 @@
 export default function FAQ() {
   return (
-    <div className="relative w-full bg-white dark:bg-gradient-to-b dark:from-gray-900 dark:to-gray-600 px-6 pt-10 pb-8 mt-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-2xl sm:rounded-lg sm:px-10">
-      <div className="mx-auto px-5">
+    <div className="relative w-full bg-white dark:bg-gradient-to-b dark:from-gray-900 dark:to-gray-600 px-10 pt-10 pb-8 mt-8 shadow-xl ring-1 ring-gray-900/5 sm:mx-auto sm:max-w-2xl sm:rounded-lg sm:px-10">
+      <div className="mx-auto">
         <div className="flex flex-col items-center">
           <h2 className="mt-5 text-center text-3xl font-bold tracking-tight md:text-5xl">
             Вопросы-Ответы

@@ -1,16 +1,16 @@
 export default function About() {
   return (
-    <>
-      <h1 className="w-full text-xl font-semibold m-0 gap-8 px-4 sm:px-6 lg:px-8">
+    <section className="w-full">
+      <h2 className="text-xl font-semibold m-0 gap-8 px-4 sm:px-6 lg:px-8">
         О проекте
-      </h1>
-      <p className="max-w-screen-xl gap-8 px-4 sm:px-6 lg:px-8 text-justify text-base p-4">
+      </h2>
+      <p className="gap-8 px-4 sm:px-6 lg:px-8 text-justify text-base p-4">
         QR-коды стали неотъемлемой частью нашей жизни. Мы встречаем их повсюду —
         на визитках, в рекламных материалах, на сайтах, упаковке товаров и даже
         в магазинах. Эти маленькие, но мощные коды позволяют легко и быстро
         получить доступ к информации, ссылкам, контактам и многому другому.
       </p>
-      <p className="max-w-screen-xl gap-8 px-4 sm:px-6 lg:px-8 text-justify text-base p-4">
+      <p className="gap-8 px-4 sm:px-6 lg:px-8 text-justify text-base p-4">
         На нашем сайте вы можете сгенерировать QR-код всего за несколько секунд.
         Бесплатно, просто и без лишних усилий — достаточно ввести нужный текст
         или ссылку, настроить параметры и получить готовый код, который можно
@@ -18,11 +18,11 @@ export default function About() {
         визитки, реклама для мероприятия или код для вашего продукта — мы
         поможем вам создать идеальный QR-код.
       </p>
-      <p className="max-w-screen-xl gap-8 px-4 sm:px-6 lg:px-8 text-justify text-base p-4">
+      <p className="gap-8 px-4 sm:px-6 lg:px-8 text-justify text-base p-4">
         Присоединяйтесь к тысячам пользователей, которым мы помогаем быть на шаг
         впереди. Легкость в использовании, скорость генерации и доступность —
         вот что отличает наш сервис.
       </p>
-    </>
+    </section>
   );
 }
