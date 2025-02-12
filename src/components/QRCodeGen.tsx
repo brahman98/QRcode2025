@@ -1,19 +1,44 @@
 import { observer } from "mobx-react-lite";
 import { QRCodeCanvas, QRCodeSVG } from "qrcode.react";
 import { qrCodeStore } from "../store/QRCodeStore";
+import { useEffect, useState } from "react";
 
 const QRCodeGen = observer(() => {
   const fixedSize = 256; // Фиксированный размер отображения
   const hasText = Boolean(qrCodeStore.text); // Проверяем, есть ли введенный текст
 
+  const [currentText, setCurrentText] = useState("сайта");
+
+  // Список текстов, которые будут чередоваться
+  const texts = ["сайта", "текста", "email"];
+
+  useEffect(() => {
+    // Смену текста будем делать каждые 3 секунды
+    const textInterval = setInterval(() => {
+      const currentIndex = texts.indexOf(currentText);
+      const nextIndex = (currentIndex + 1) % texts.length;
+      setCurrentText(texts[nextIndex]);
+    }, 6000); // 3 секунды
+
+    // Очистка интервала при размонтировании компонента
+    return () => {
+      clearInterval(textInterval);
+    };
+  }, [currentText]);
+
   return (
     <div className="w-full flex flex-col items-center mb-12">
-      <h2 className="text-[56px] font-bold -tracking-wider leading-[58px] mb-5 text-center">
+      <h2 className="text-[56px] text-center font-bold -tracking-wider leading-[58px] mb-5">
         Твой QR&#8209;код
         <br />
-        <span className="text-transparent bg-clip-text bg-gradient-to-r to-indigo-600 from-violet-400">
-          для сайта
-        </span>
+        <div className="flex justify-center w-full pl-3 pt-2">
+          <p className="text-[76px] leading-[78px] whitespace-nowrap  text-transparent bg-clip-text bg-[#14acf8]">
+            для&nbsp;
+          </p>
+          <p className="text-[76px] leading-[78px] pr-3 animate-typing whitespace-nowrap border-r-4 border-r-black dark:border-r-4 dark:border-r-white text-transparent bg-clip-text bg-gradient-to-r to-indigo-600 from-[#14acf8]">
+          {currentText}
+          </p>
+        </div>
       </h2>
 
       <div className="flex flex-col items-center md:flex-row md:justify-center md:gap-12 bg-white dark:bg-gradient-to-b dark:from-gray-900 dark:to-gray-600 p-6 mt-8 shadow-xl ring-1 ring-gray-900/5 rounded-lg">

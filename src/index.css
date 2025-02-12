@@ -4,5 +4,40 @@
 
 
 details summary::-webkit-details-marker {
-    display:none;
+  display: none;
+}
+
+@theme {
+  --animate-typing: typing 3s steps(20, end) infinite alternate, blink 0.8s infinite alternate;
+
+  @keyframes typing {
+    0% {
+      width: 0;
+    }
+
+    45% {
+      width: 100%;
+    }
+
+    100% {
+      width: 80%;
+    }
   }
+
+  @keyframes blink {
+    0% {
+      border-color: inherit;
+    }
+    40% {
+      border-color: inherit;
+    }
+    60% {
+      border-color: none;
+    }
+    100% {
+      border-color: none;
+    }
+  }
+
+  
+}
