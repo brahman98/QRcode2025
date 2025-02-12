@@ -10,6 +10,7 @@ const QRCodeGen = observer(() => {
   const [currentText, setCurrentText] = useState("сайта");
 
   // Список текстов, которые будут чередоваться
+  // eslint-disable-next-line react-hooks/exhaustive-deps
   const texts = ["сайта", "текста", "email"];
 
   useEffect(() => {
@@ -24,7 +25,7 @@ const QRCodeGen = observer(() => {
     return () => {
       clearInterval(textInterval);
     };
-  }, [currentText]);
+  }, [currentText, texts]);
 
   return (
     <div className="w-full flex flex-col items-center mb-12">
