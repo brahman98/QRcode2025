@@ -8,19 +8,19 @@ details summary::-webkit-details-marker {
 }
 
 @theme {
-  --animate-typing: typing 3s steps(20, end) infinite alternate, blink 0.8s infinite alternate;
+  --animate-typing: typing 2.5s steps(20, end) infinite alternate, blink 0.8s infinite alternate;
 
   @keyframes typing {
     0% {
       width: 0;
     }
 
-    45% {
+    40% {
       width: 100%;
     }
 
     100% {
-      width: 80%;
+      width: 100%;
     }
   }
 

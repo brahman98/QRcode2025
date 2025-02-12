@@ -7,37 +7,32 @@ const QRCodeGen = observer(() => {
   const fixedSize = 256; // Фиксированный размер отображения
   const hasText = Boolean(qrCodeStore.text); // Проверяем, есть ли введенный текст
 
-  const [currentText, setCurrentText] = useState("сайта");
+  const [currentTextIndex, setCurrentTextIndex] = useState(0);
 
-  // Список текстов, которые будут чередоваться
-  // eslint-disable-next-line react-hooks/exhaustive-deps
   const texts = ["сайта", "текста", "email"];
 
+  // Смену текста будем делать каждые 3 секунды
   useEffect(() => {
-    // Смену текста будем делать каждые 3 секунды
     const textInterval = setInterval(() => {
-      const currentIndex = texts.indexOf(currentText);
-      const nextIndex = (currentIndex + 1) % texts.length;
-      setCurrentText(texts[nextIndex]);
-    }, 6000); // 3 секунды
+      setCurrentTextIndex((prevIndex) => (prevIndex + 1) % texts.length);
+    }, 5000); // 3 секунды
 
-    // Очистка интервала при размонтировании компонента
-    return () => {
-      clearInterval(textInterval);
-    };
-  }, [currentText, texts]);
+    return () => clearInterval(textInterval); // Очистка интервала
+  }, [texts.length]);
 
   return (
     <div className="w-full flex flex-col items-center mb-12">
-      <h2 className="text-[56px] text-center font-bold -tracking-wider leading-[58px] mb-5">
+      <h2 className="text-[56px] md:text-[66px] text-center font-bold -tracking-wider leading-[58px] mb-5 overflow-hidden">
         Твой QR&#8209;код
         <br />
         <div className="flex justify-center w-full pl-3 pt-2">
-          <p className="text-[76px] leading-[78px] whitespace-nowrap  text-transparent bg-clip-text bg-[#14acf8]">
+          <p className="text-[66px] leading-[68px] whitespace-nowrap  text-transparent bg-clip-text bg-[#14acf8]">
             для&nbsp;
           </p>
-          <p className="text-[76px] leading-[78px] pr-3 animate-typing whitespace-nowrap border-r-4 border-r-black dark:border-r-4 dark:border-r-white text-transparent bg-clip-text bg-gradient-to-r to-indigo-600 from-[#14acf8]">
-          {currentText}
+          <p className="text-[66px] leading-[68px] pr-3 text-left animate-typing whitespace-nowrap border-r-4 border-r-black dark:border-r-4 dark:border-r-white text-transparent bg-clip-text bg-gradient-to-r to-indigo-600 from-[#14acf8]"
+          key={currentTextIndex}
+        >
+          {texts[currentTextIndex]}
           </p>
         </div>
       </h2>
