@@ -25,14 +25,15 @@ const QRCodeGen = observer(() => {
       <h2 className="text-[56px] md:text-[66px] text-center font-bold -tracking-wider leading-[58px] mb-5 overflow-hidden">
         Твой QR&#8209;код
         <br />
-        <div className="flex justify-center w-full pl-3 pt-2">
+        <div className="flex justify-center w-full pl-3 pt-2 md:pl-8 md:pr-6">
           <p className="text-[66px] leading-[68px] whitespace-nowrap  text-transparent bg-clip-text bg-[#14acf8]">
             для&nbsp;
           </p>
-          <p className="text-[66px] leading-[68px] pr-3 text-left animate-typing whitespace-nowrap border-r-4 border-r-black dark:border-r-4 dark:border-r-white text-transparent bg-clip-text bg-gradient-to-r to-indigo-600 from-[#14acf8]"
-          key={currentTextIndex}
-        >
-          {texts[currentTextIndex]}
+          <p
+            className="text-[66px] leading-[68px] pr-3 text-left animate-typing whitespace-nowrap border-r-4 border-r-black dark:border-r-4 dark:border-r-white text-transparent bg-clip-text bg-gradient-to-r to-indigo-600 from-[#14acf8]"
+            key={currentTextIndex}
+          >
+            {texts[currentTextIndex]}
           </p>
         </div>
       </h2>
@@ -81,7 +82,7 @@ const QRCodeGen = observer(() => {
                 </div>
               </label>
               <div className="flex justify-around">
-                <label className="block mb-2">
+                <label className="block mb-2 p-2 border rounded-lg">
                   Цвет:
                   <input
                     type="color"
@@ -90,7 +91,7 @@ const QRCodeGen = observer(() => {
                     onChange={(e) => qrCodeStore.setFgColor(e.target.value)}
                   />
                 </label>
-                <label className="block">
+                <label className="block mb-2 p-2 border rounded-lg">
                   Фон:
                   <input
                     type="color"
@@ -123,6 +124,7 @@ const QRCodeGen = observer(() => {
               />
             )}
           </div>
+
           <div className="flex">
             <button
               className="border p-2 mx-2 rounded-lg cursor-pointer"
