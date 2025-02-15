@@ -38,12 +38,11 @@ const QRCodeGen = observer(() => {
         </div>
       </h2>
 
-      <div className="flex flex-col items-center md:flex-row md:justify-center md:gap-12 bg-white dark:bg-gradient-to-b dark:from-gray-900 dark:to-gray-600 p-6 mt-8 shadow-xl ring-1 ring-gray-900/5 rounded-lg">
+      <div className="flex flex-col items-center md:h-100 md:flex-row md:justify-center md:gap-12 bg-white dark:bg-gradient-to-b dark:from-gray-900 dark:to-gray-600 p-6 mt-8 shadow-xl ring-1 ring-gray-900/5 rounded-lg">
         <div>
           <p className="font-normal leading-6 text-justify mb-4 w-80">
-            Создай уникальный QR-код за секунду. Вставь текст или ссылку,
-            настрой параметры и получи готовый QR-код для использования. Удобно,
-            быстро и бесплатно!
+            Создай уникальный QR-код за секунду. Вставь текст или ссылку и
+            получи готовый QR-код для использования. Удобно, быстро и бесплатно!
           </p>
 
           <input
@@ -56,7 +55,7 @@ const QRCodeGen = observer(() => {
 
           {/* Кнопка "Настройки" */}
           <details className="mb-4 w-full max-w-xs">
-            <summary className="cursor-pointer border p-2 text-center rounded-lg list-none">
+            <summary className="cursor-pointer border p-2 text-center rounded-lg list-none hover:bg-gradient-to-r to-indigo-600 from-[#14acf8] hover:text-white dark:hover:bg-gradient-to-b dark:hover:from-gray-900 dark:hover:to-gray-600">
               Настройки
             </summary>
             <div className="mt-2 p-2 border rounded-lg">
@@ -82,21 +81,21 @@ const QRCodeGen = observer(() => {
                 </div>
               </label>
               <div className="flex justify-around">
-                <label className="block mb-2 p-2 border rounded-lg">
+                <label className="flex mb-2 p-2 border rounded-lg cursor-pointer hover:bg-gradient-to-r to-indigo-600 from-[#14acf8] hover:text-white dark:hover:bg-gradient-to-b dark:hover:from-gray-900 dark:hover:to-gray-600">
                   Цвет:
                   <input
                     type="color"
                     value={qrCodeStore.fgColor}
-                    className="ml-2"
+                    className="ml-2 cursor-pointer"
                     onChange={(e) => qrCodeStore.setFgColor(e.target.value)}
                   />
                 </label>
-                <label className="block mb-2 p-2 border rounded-lg">
+                <label className="flex mb-2 p-2 border rounded-lg cursor-pointer hover:bg-gradient-to-r to-indigo-600 from-[#14acf8] hover:text-white dark:hover:bg-gradient-to-b dark:hover:from-gray-900 dark:hover:to-gray-600">
                   Фон:
                   <input
                     type="color"
                     value={qrCodeStore.bgColor}
-                    className="ml-2"
+                    className="ml-2 cursor-pointer"
                     onChange={(e) => qrCodeStore.setBgColor(e.target.value)}
                   />
                 </label>
@@ -127,14 +126,14 @@ const QRCodeGen = observer(() => {
 
           <div className="flex">
             <button
-              className="border p-2 mx-2 rounded-lg cursor-pointer"
+              className="border p-2 mx-2 rounded-lg cursor-pointer hover:bg-gradient-to-r to-indigo-600 from-[#14acf8] hover:text-white dark:hover:bg-gradient-to-b dark:hover:from-gray-900 dark:hover:to-gray-600"
               onClick={() => qrCodeStore.downloadQRCode("png")}
               disabled={!hasText}
             >
               Скачать PNG
             </button>
             <button
-              className="border p-2 mx-2 rounded-lg cursor-pointer"
+              className="border p-2 mx-2 rounded-lg cursor-pointer hover:bg-gradient-to-r to-indigo-600 from-[#14acf8] hover:text-white dark:hover:bg-gradient-to-b dark:hover:from-gray-900 dark:hover:to-gray-600"
               onClick={() => qrCodeStore.downloadQRCode("svg")}
               disabled={!hasText}
             >
