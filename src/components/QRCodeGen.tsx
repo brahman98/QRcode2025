@@ -11,11 +11,11 @@ const QRCodeGen = observer(() => {
 
   const texts = ["сайта", "текста", "email"];
 
-  // Смену текста будем делать каждые 3 секунды
+  // Смену текста будем делать каждые 5 секунд
   useEffect(() => {
     const textInterval = setInterval(() => {
       setCurrentTextIndex((prevIndex) => (prevIndex + 1) % texts.length);
-    }, 5000); // 3 секунды
+    }, 5000); // 5 секунд
 
     return () => clearInterval(textInterval); // Очистка интервала
   }, [texts.length]);

@@ -1,6 +1,6 @@
 export default function About() {
   return (
-    <section className="w-full">
+    <section id="about" className="w-full pt-5">
       <h2 className="text-xl font-semibold m-0 gap-8 px-4 sm:px-6 lg:px-8">
         О проекте
       </h2>

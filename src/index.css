@@ -7,6 +7,10 @@ details summary::-webkit-details-marker {
   display: none;
 }
 
+html {
+  scroll-behavior: smooth;
+}
+
 @theme {
   --animate-typing: typing 2.5s steps(20, end) infinite alternate, blink 0.8s infinite alternate;
 

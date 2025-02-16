@@ -1,5 +1,6 @@
 // import React from 'react';
 
+
 function Footer() {
   return (
     <footer className="w-full gap-8 px-4 sm:px-6 lg:px-8 text-center text-base p-4">
@@ -17,25 +18,25 @@ function Footer() {
       </p>
       <div className="flex flex-col md:flex-row items-center justify-center mb-[15px]">
         <a
-          href="#"
-          className="text-[#728a96] dark:text-[#17adf9] no-underline mx-4 my-[5px]"
+          href="#home"
+          className="text-[#728a96] dark:text-[#17adf9] hover:text-transparent bg-clip-text bg-gradient-to-r to-indigo-600 from-[#14acf8] dark:hover:text-[#ffffff] no-underline mx-4 my-[5px]"
         >
           Главная
         </a>
         <a
-          href="#"
-          className="text-[#728a96] dark:text-[#17adf9] no-underline mx-4 my-[5px]"
+          href="#about"
+          className="text-[#728a96] dark:text-[#17adf9] hover:text-transparent bg-clip-text bg-gradient-to-r to-indigo-600 from-[#14acf8] dark:hover:text-[#ffffff] no-underline mx-4 my-[5px]"
         >
           О проекте
         </a>
         <a
-          href="#"
-          className="text-[#728a96] dark:text-[#17adf9] no-underline mx-4 my-[5px]"
+          href="#faq"
+          className="text-[#728a96] dark:text-[#17adf9] hover:text-transparent bg-clip-text bg-gradient-to-r to-indigo-600 from-[#14acf8] dark:hover:text-[#ffffff] no-underline mx-4 my-[5px]"
         >
           Вопросы/Ответы
         </a>
       </div>
-      <div className="social__media">
+      <div className="mb-4">
         <a href="#" className="text-3xl no-underline mx-2.5 my-0">
           <i className="fa-brands fa-youtube"></i>
         </a>
@@ -43,7 +44,7 @@ function Footer() {
           <i className="fa-brands fa-telegram"></i>
         </a>
       </div>
-      <p>© QRcode2025.ru</p>
+      <p className="mb-4">© QRcode2025.ru</p>
     </footer>
   );
 }
